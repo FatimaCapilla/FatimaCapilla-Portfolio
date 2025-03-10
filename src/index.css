@@ -10,6 +10,18 @@ body {
   overflow-x: hidden; 
 }
 
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(76, 209, 149);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  z-index: 9999;
+}
+
 /* MENÚ DE NAVEGACIÓN */
 .navbar {
   width: 100%;
