@@ -10,15 +10,16 @@ body {
   overflow-x: hidden; 
 }
 
-/* Cambiar el cursor a un corazón en toda la página */
-body {
-  cursor: url('src/assets/logo-nav.png'), auto;
-}
-
 /* MENÚ DE NAVEGACIÓN */
 .navbar {
   width: 100%;
   padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
 }
 
 .navbar nav ul {
@@ -28,8 +29,7 @@ body {
   list-style: none;
 }
 
-.navbar .left,
-.navbar .right {
+.navbar .left, .navbar .right {
   display: flex;
   gap: 60px;
 }
@@ -51,29 +51,47 @@ body {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  display: inline-block;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
 }
 
 .navbar nav ul li a:hover {
-  color: white; /* Color del texto cuando pase el ratón */
-  background-color: pink; /* Fondo rosa */
-  border-radius: 50%; /* Hacer el borde circular */
-  padding: 20px 20px; /* Ampliar el padding para hacer el círculo más grande */
-  transition: all 0.3s ease; /* Transición suave */
+  color: white;
+  background-color: pink;
+  border-radius: 50%;
+  padding: 10px 15px;
 }
 
-/* Línea de separación */
-.hr-nav {
-  height: 5px;
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1100;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 4px;
   background-color: black;
-  border: none;
-  margin: 10px 0;
+  transition: all 0.3s ease-in-out;
 }
 
 /* COLLAGE */
+.hello {
+  padding-top: 120px;
+}
+
 .collage {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-  grid-template-rows: repeat(2, auto); /* 2 filas */
+  grid-template-columns: repeat(4, 1fr);
   margin: auto;
 }
 
@@ -89,7 +107,6 @@ body {
   display: block;
 }
 
-/* Overlay de texto al pasar el ratón */
 .overlay {
   position: absolute;
   top: 0;
@@ -105,6 +122,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .collage-item:hover .overlay {
@@ -112,38 +130,54 @@ body {
 }
 
 /* 🔹 RESPONSIVE DESIGN */
-
-/* Para tablets (máx. 768px) */
 @media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .navbar .left {
+    margin-left: 0%;
+  }
+  
+  .navbar .right {
+    margin-right: 0%;
+  }
   .navbar nav ul {
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    padding: 20px 0;
   }
 
-  .navbar .left,
-  .navbar .right {
+  .navbar.open nav ul {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+  }
+
+  .navbar .left, .navbar .right {
     flex-direction: column;
-    gap: 5px;
-    margin: 0%;
-    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .hello {
+    padding-top: 100px;
   }
 
   .collage {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    grid-template-rows: repeat(4, auto); /* 4 filas */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Para móviles (máx. 480px) */
 @media screen and (max-width: 480px) {
   .collage {
-    grid-template-columns: repeat(2, 1fr); /* 1 columnas */
-    grid-template-rows: repeat(8, auto); /* 8 filas */
-  }
-
-  .navbar nav ul {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .navbar .logo-nav {
