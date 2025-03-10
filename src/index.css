@@ -10,6 +10,11 @@ body {
   overflow-x: hidden; 
 }
 
+/* Cambiar el cursor a un corazón en toda la página */
+body {
+  cursor: url('src/assets/logo-nav.png'), auto;
+}
+
 /* MENÚ DE NAVEGACIÓN */
 .navbar {
   width: 100%;
@@ -49,7 +54,11 @@ body {
 }
 
 .navbar nav ul li a:hover {
-  color: pink;
+  color: white; /* Color del texto cuando pase el ratón */
+  background-color: pink; /* Fondo rosa */
+  border-radius: 50%; /* Hacer el borde circular */
+  padding: 20px 20px; /* Ampliar el padding para hacer el círculo más grande */
+  transition: all 0.3s ease; /* Transición suave */
 }
 
 /* Línea de separación */
@@ -96,7 +105,6 @@ body {
   font-size: 18px;
   font-weight: bold;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .collage-item:hover .overlay {
