@@ -70,7 +70,7 @@ body {
 
 .navbar nav ul li a:hover {
   color: white;
-  background-color: pink;
+  background-color: rgb(251, 165, 212);
   border-radius: 50%;
   padding: 10px 15px;
 }
@@ -95,12 +95,30 @@ body {
   background-color: black;
   transition: all 0.3s ease-in-out;
 }
-
-/* COLLAGE */
+/*presentación*/
+.white-top {
+  padding-top: 115px;
+}
 .hello {
-  padding-top: 120px;
+  background-color: rgb(251, 165, 212);
+  color: rgb(251, 69, 69);
+  font-size: 50px;
+  display: flex;              
+  justify-content: space-between; 
+  align-items: center;   
 }
 
+.hello p{
+  font-size: 200%;
+  padding-left: 5%;
+}
+
+.ilustracion-fatima {
+width: 30%;
+height: 30%;
+}
+
+/* COLLAGE */
 .collage {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -140,8 +158,15 @@ body {
 .collage-item:hover .overlay {
   opacity: 1;
 }
+/*FOOTER*/
+footer {
+  text-align: center;
+  background-color: rgb(76, 209, 149);
+  font-size: 50px;
+  color: white;
+}
 
-/* 🔹 RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -178,10 +203,17 @@ body {
     text-align: center;
   }
 
-  .hello {
-    padding-top: 100px;
+  .white-top {
+    padding-top: 40px;
   }
-
+  .hello p{
+    font-size: 50%;
+    padding-left: 5%;
+  }
+  .ilustracion-fatima {
+    width: 50%;
+    height: 50%;
+    }
   .collage {
     grid-template-columns: repeat(2, 1fr);
   }
