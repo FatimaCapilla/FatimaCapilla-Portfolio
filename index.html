@@ -38,7 +38,6 @@
             </nav>
         </div>
     </header>
-
     <!-- CONTENIDO PRINCIPAL -->
     <main>
         <div id="inicio" class="white-top"></div>
@@ -46,6 +45,44 @@
             <p>HOLA SOY FÁTIMA CAPILLA Y ESTE ES MI PORTFOLIO.</p>
             <img class="ilustracion-fatima" src="./src/assets/ilustración-fatima-capilla.png" alt="Imagen fatima">
         </div>
+
+<!-- TEXTO ANIMADO DEBAJO DEL NAV -->
+<div class="typing-container">
+    <span class="fixed-text">Diseñadora</span>
+    <span class="dynamic-text"></span>
+</div>
+<script>
+    const words = ["de moda", "gráfica", "web"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+        const dynamicText = document.querySelector(".dynamic-text");
+        const currentWord = words[wordIndex];
+
+        if (deleting) {
+            dynamicText.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            dynamicText.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!deleting && charIndex === currentWord.length) {
+            setTimeout(() => deleting = true, 1000);
+        } else if (deleting && charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+        setTimeout(typeEffect, deleting ? 100 : 150);
+    }
+
+    typeEffect();
+</script>
+
+
         <div id="collage-grafico" class="collage">
             <div class="collage-item">
                 <img src="./src/assets/gráfico/grafico-revista.png" alt="Imagen 1">
