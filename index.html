@@ -28,10 +28,10 @@
                         <li><a href="#collage-moda">MODA</a></li>
                     </div>
                     <!-- Imagen centrada -->
-                    <a href="#inicio"><img class="logo-nav" src="src/assets/logo-nav.png" alt="logo-nav"></a>
+                    <a href="#inicio"><img class="logo-nav" src="src/assets/fc-next.png" alt="logo-nav"></a>
                     <!-- Elementos alineados a la derecha -->
                     <div class="right">
-                        <li><a href="">ACERCA DE MI</a></li>
+                        <li><a href="#acerca-de-mi">ACERCA DE MI</a></li>
                         <li><a href="#contactame-footer">CONTÁCTAME</a></li>
                     </div>
                 </ul>
@@ -42,47 +42,48 @@
     <main>
         <div id="inicio" class="white-top"></div>
         <div class="hello">
-            <p>HOLA SOY FÁTIMA CAPILLA Y ESTE ES MI PORTFOLIO.</p>
-            <img class="ilustracion-fatima" src="./src/assets/ilustración-fatima-capilla.png" alt="Imagen fatima">
-        </div>
-
-<!-- TEXTO ANIMADO DEBAJO DEL NAV -->
+            <p>HOLA, SOY FÁTIMA CAPILLA Y ESTE ES MI PORTFOLIO.</p>
+      <img class="ilustracion-fatima" src="./src/assets/ilustración-fatima-capilla.png" alt="Imagen fatima">
+    </div>
+<!-- TEXTO ANIMADO -->
 <div class="typing-container">
     <span class="fixed-text">Diseñadora</span>
     <span class="dynamic-text"></span>
 </div>
-<script>
-    const words = ["de moda", "gráfica", "web"];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function typeEffect() {
-        const dynamicText = document.querySelector(".dynamic-text");
-        const currentWord = words[wordIndex];
-
-        if (deleting) {
-            dynamicText.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            dynamicText.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        if (!deleting && charIndex === currentWord.length) {
-            setTimeout(() => deleting = true, 1000);
-        } else if (deleting && charIndex === 0) {
-            deleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-        }
-
-        setTimeout(typeEffect, deleting ? 100 : 150);
-    }
-
-    typeEffect();
-</script>
-
-
+<div id="collage-web" class="collage">
+    <div class="collage-item">
+        <img src="./src/assets/web/web-alojamientos.png" alt="Imagen 1">
+        <div class="overlay">Diseños de web para la reserva de alojamientos</div>
+    </div>
+    <div class="collage-item">
+        <img src="./src/assets/web/web-film.png" alt="Imagen 2">
+        <div class="overlay">Listado de películas</div>
+    </div>
+    <div class="collage-item">
+        <img src="./src/assets/web/web-github.png" alt="Imagen 3">
+        <div class="overlay">Perfil de GitHub</div>
+    </div>
+    <div class="collage-item">
+        <img src="./src/assets/web/web-museum.png" alt="Imagen 4">
+        <div class="overlay">Diseño de web con react para la exposición de un museo</div>
+    </div>
+    <div class="collage-item">
+        <img src="./src/assets/web/web-pdf.png" alt="Imagen 5">
+        <div class="overlay">Diseño de web para la creación de PDF</div>
+    </div>
+    <div class="collage-item">
+        <img src="./src/assets/web/web-spark.png" alt="Imagen 6">
+        <div class="overlay">Diseño de web digital SparkwebTech</div>
+    </div>
+    <div class="collage-item">
+        <img src="./src/assets/web/web-toquen-el-dom.png" alt="Imagen 7">
+        <div class="overlay">Paágina web de piano digital</div>
+    </div>
+    <div class="collage-item">
+        <img src="./src/assets/web/web-nexus-news.png" alt="Imagen 8">
+        <div class="overlay">Diseño web para periodico digital</div>
+    </div>
+</div>
         <div id="collage-grafico" class="collage">
             <div class="collage-item">
                 <img src="./src/assets/gráfico/grafico-revista.png" alt="Imagen 1">
@@ -151,12 +152,38 @@
                 <div class="overlay">Moda Robots</div>
             </div>
         </div>
+        <!--SOBRE MI-->
+        <div class="name-fatima">
+            <h1>Fátima Capilla Sancho</h1>
+        </div>
+        <div class="sobre-mi" id="acerca-de-mi">
+            <div class="info-izquierda">
+                <img src="./src/assets/fatima-capilla.JPEG" alt="">
+                <h2>UX/UI <br> Diseñadora gráfica y web</h2>
+            </div>
+            <div class="info-derecha">
+                <p>Me encanta explorar nuevas fronteras y fusionar la creatividad con la
+                innovación, mi trayectoria ha evolucionado desde el mundo de la moda,
+                hacia el campo de la tecnología, estudiando un bootcamp de desarrollo
+                web full stack. Mi objetivo es aplicar mis habilidades creativas en el diseño
+                web y la programación para crear soluciones digitales innovadoras y
+                estéticamente atractivas.</p>
+            </div>
+        </div>
+
+        <!--FOOTER-->
         <footer id="contactame-footer">
             <p>HABLEMOS PARA TRABAJAR JUNTOS</p>
-            <i class="fa-solid fa-envelope"></i>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-tiktok"></i>
+            <div class="iconos">
+                <a href="mailto:fatima.capilla.sancho@gmail.com">
+                    <i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/fatima-capilla-sancho" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                <a href="https://github.com/FatimaCapilla" target="_blank"><i class="fab fa-github"></i></a>
+               <a href="https://www.tiktok.com/@fatimachapel" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
 
 
         </footer>
@@ -182,6 +209,35 @@
         cursor.style.top = `${e.clientY}px`;
     });
 </script>
+<script>
+    const words = ["de moda", "gráfica", "web"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
 
+    function typeEffect() {
+        const dynamicText = document.querySelector(".dynamic-text");
+        const currentWord = words[wordIndex];
+
+        if (deleting) {
+            dynamicText.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            dynamicText.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!deleting && charIndex === currentWord.length) {
+            setTimeout(() => deleting = true, 1000);
+        } else if (deleting && charIndex === 0) {
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+
+        setTimeout(typeEffect, deleting ? 100 : 150);
+    }
+
+    typeEffect();
+</script>
 </body>
 </html>

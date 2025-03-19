@@ -25,7 +25,7 @@ body {
 /* MENÚ DE NAVEGACIÓN */
 .navbar {
   width: 100%;
-  padding: 15px 20px;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -55,7 +55,7 @@ body {
 }
 
 .navbar .logo-nav {
-  width: 80px;
+  width: 50px;
   height: auto;
 }
 
@@ -97,20 +97,20 @@ body {
 }
 /*presentación*/
 .white-top {
-  padding-top: 115px;
+  padding-top: 95px;
 }
 .hello {
   background-color: rgb(251, 165, 212);
   color: rgb(251, 69, 69);
-  font-size: 50px;
+  font-size: 350%;
   display: flex;              
   justify-content: space-between; 
-  align-items: center;   
+  align-items: center; 
 }
 
 .hello p{
-  font-size: 200%;
-  padding-left: 5%;
+  font-size: 100px;
+  padding-left: 2%;
 }
 
 .ilustracion-fatima {
@@ -127,6 +127,7 @@ height: 30%;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 60px;
   background-color: rgb(76, 209, 149);
   text-align: center;
 }
@@ -183,6 +184,51 @@ height: 30%;
 .collage-item:hover .overlay {
   opacity: 1;
 }
+/*SOBRE MI*/
+
+.sobre-mi {
+  background-color: rgb(251, 165, 212);
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: space-between; /* Separa los elementos */
+}
+
+.sobre-mi img{
+  width: 70%;
+  padding-left: 5%;
+  filter: grayscale(100%);
+}
+.name-fatima{
+  font-size: 300%;
+  color: rgb(251, 69, 69);
+  background-color:  rgb(251, 165, 212);
+  padding-left: 3%;
+}
+
+.sobre-mi h2{
+  font-size: 200%;
+  color: rgb(251, 69, 69);
+}
+
+.sobre-mi p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  color: white;
+}
+
+.sobre-mi .info-derecha{
+  margin-right: 10%;
+  text-align: justify;
+}
+
+.sobre-mi .info-izquierda {
+  display: flex;
+  flex-direction: column; /* Pone los elementos uno debajo del otro */
+  align-items: flex-start; /* Alinea a la izquierda */
+  gap: 10px; /* Espaciado entre los elementos */
+  margin-left: 3%;
+}
+
 /*FOOTER*/
 footer {
   text-align: center;
@@ -190,9 +236,24 @@ footer {
   font-size: 50px;
   color: white;
 }
+.iconos {
+ height: 100%;
+}
+#contactame-footer a {
+  text-decoration: none;  /* Elimina el subrayado del enlace */
+  color: white;  /* Mantiene el color blanco */
+}
+
+#contactame-footer a:hover {
+  color: rgb(251, 165, 212); 
+}
+
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
   .menu-toggle {
     display: flex;
   }
@@ -231,22 +292,60 @@ footer {
   .white-top {
     padding-top: 40px;
   }
+  .hello {
+    display: flex;
+    flex-direction: column;  /* Asegura que los elementos estén en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center;  /* Centra los elementos horizontalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+  }
+  
   .hello p{
-    font-size: 50%;
-    padding-left: 5%;
+    font-size: 70%;
+    padding-top: 5%;
+    padding-right: 1%;
   }
   .ilustracion-fatima {
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 70%;
     }
 
     .typing-container {
       font-size: 10vw;
       width: 100%;
-      height: 60px;
+      height: 80px;
     }
   .collage {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .sobre-mi {
+    display: block;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+  .name-fatima {
+    font-size: 120%;
+    justify-items: center;
+  }
+  .sobre-mi .info-derecha{
+    margin-right: 0%;
+    text-align: justify;
+    margin: 5%;
+  }
+  
+  .sobre-mi .info-izquierda {
+    display: flex;
+    flex-direction: column; /* Pone los elementos uno debajo del otro */
+    align-items: center; /* Alinea a la izquierda */
+    gap: 10px; /* Espaciado entre los elementos */
+    margin-left: 0%;
+  }
+  .sobre-mi img{
+    width: 70%;
+    padding-left: 0%;
+    filter: grayscale(100%);
   }
 }
 
