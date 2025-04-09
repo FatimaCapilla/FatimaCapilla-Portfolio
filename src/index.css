@@ -198,6 +198,9 @@ height: 30%;
   padding-left: 5%;
   filter: grayscale(100%);
 }
+.sobre-mi img:hover{
+  filter: none;
+}
 .name-fatima{
   font-size: 300%;
   color: rgb(251, 69, 69);
